@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload">
+    <script src="/assets/application-114264dd93c8ff30e4335b71eed7949d66c4e7a8eb62e2de6284c046fe07104b.js" data-turbolinks-track="reload"></script>
+  <title>WebCampBackendNew</title>
+  <meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="ImsbwNooCSflQZNQNkYDFCmNU04j4ZAUi/u6/4aPfU67BjyufBTbhSg+hCvwuqe2L2Hwbx4by8hgxAb523J3JQ==">
+</head>
+
+<body>
+    <p id="notice"></p>
+
+<h1>Books</h1>
+
+<table>
+
+  <tbody>
+      <tr>
+        <td>リーダブルコード</td>
+        <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
+        <td><a class="show_119971" href="/books/119971">Show</a></td>
+        <td><a class="edit_119971" href="/books/119971/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_119971" rel="nofollow" data-method="delete" href="/books/119971">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>トラブル知らずのシステム設計</td>
+        <td>システム設計の要点を図解で説明してくれます</td>
+        <td><a class="show_119972" href="/books/119972">Show</a></td>
+        <td><a class="edit_119972" href="/books/119972/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_119972" rel="nofollow" data-method="delete" href="/books/119972">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>たのしいRuby</td>
+        <td>Rubyの入門におすすめです</td>
+        <td><a class="show_119973" href="/books/119973">Show</a></td>
+        <td><a class="edit_119973" href="/books/119973/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_119973" rel="nofollow" data-method="delete" href="/books/119973">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>入門Git</td>
+        <td>gitについての基本操作から内部構造まで解説してくれます</td>
+        <td><a class="show_119974" href="/books/119974">Show</a></td>
+        <td><a class="edit_119974" href="/books/119974/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_119974" rel="nofollow" data-method="delete" href="/books/119974">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>アルゴリズム図鑑</td>
+        <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
+        <td><a class="show_119975" href="/books/119975">Show</a></td>
+        <td><a class="edit_119975" href="/books/119975/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_119975" rel="nofollow" data-method="delete" href="/books/119975">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>達人プログラマー</td>
+        <td>プログラマ入門者は必読！</td>
+        <td><a class="show_119976" href="/books/119976">Show</a></td>
+        <td><a class="edit_119976" href="/books/119976/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_119976" rel="nofollow" data-method="delete" href="/books/119976">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>データベース実践入門</td>
+        <td>効率的なSQL文を教えてくれます</td>
+        <td><a class="show_119977" href="/books/119977">Show</a></td>
+        <td><a class="edit_119977" href="/books/119977/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_119977" rel="nofollow" data-method="delete" href="/books/119977">Destroy</a></td>
+      </tr>
+
+<thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+</thead>
+
+      <tr>
+        <% @lists.each do |list| %>
+       <p>タイトル</p>
+       <span><%= list.title %></span>
+       <% end %>
+      </tr>
+ </tbody>
+
+</table>
+<h2>New book</h2>
+<%= form_with model: List.new do |f| %>
+<h4>Title</h4>
+  <%= f.text_field :title %>
+
+<h4>Body</h4>
+<%= f.text_area :body %>
+  <div class="actions">
+    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
+  </div>
+<% end %>
+
+
+
+</html>
